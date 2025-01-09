@@ -1,0 +1,30 @@
+{
+    "films": [
+        {
+            "id": "1",
+            "titre": "Inception",
+            "annee": "2010",
+            "realisateur": "Christopher Nolan",
+            "genre": ["Science-Fiction", "Action"],
+            "description": "Dom Cobb est un voleur expérimenté dans l'art périlleux de l'extraction...",
+            "note": 3,
+            "videoUrl": "Movie/[free] népal x dexa type beat - tempête.mp4",
+            "image": "MovieImage/4700907.jpg",
+            "nouveau": false,
+            "dateSortie": "2024"
+        },
+        {
+            "id": "2",
+            "titre": "Pulp Fiction",
+            "annee": "1994",
+            "realisateur": "Quentin Tarantino",
+            "genre": ["Crime", "Drame"],
+            "description": "L'odyssée sanglante et burlesque de petits malfrats...",
+            "note": 4.9,
+            "videoUrl": "Movie/[free] népal x dexa type beat - tempête.mp4",
+            "image": "MovieImage/aff_3173020191031000001.jpg",
+            "nouveau": false,
+            "dateSortie": "1994"
+        }
+    ]
+}

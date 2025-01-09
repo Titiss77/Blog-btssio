@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéBlog - Lecteur</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CinéBlog</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="movie-player-container">
+        <h1 class="movie-title"></h1>
+
+        <div class="movie-info"></div>
+
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+        </div>
+
+        <section class="comments-section">
+            <h2>Commentaires</h2>
+            
+            <form id="commentForm" class="comment-form">
+                <h3>Ajouter un commentaire</h3>
+                <div class="rating-input">
+                    <label for="rating">Note:</label>
+                    <select name="rating" id="rating" required>
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="1">★☆☆☆☆</option>
+                    </select>
+                </div>
+                <textarea name="comment" placeholder="Partagez votre avis..." required></textarea>
+                <button type="submit" class="btn">Publier</button>
+            </form>
+
+            <div class="comments-list">
+                <!-- Les commentaires seront injectés ici -->
+            </div>
+        </section>
+    </main>
+
+    <script src="movie-player.js"></script>
+</body>
+</html>

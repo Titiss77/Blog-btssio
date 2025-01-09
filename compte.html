@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéBlog - Mon Compte</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CinéBlog</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+                <li><a href="test.html">TEST - PLAYER</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="account-layout">
+        <!-- Menu du compte -->
+        <aside class="account-sidebar">
+            <div class="profile-summary">
+                <img src="/api/placeholder/100/100" alt="Avatar" class="profile-avatar">
+                <h3>John Doe</h3>
+            </div>
+            <nav class="account-nav">
+                <a href="#profile" class="active">Mon Profil</a>
+                <a href="#watchlist">Ma Liste</a>
+                <a href="#history">Historique</a>
+                <a href="#settings">Paramètres</a>
+            </nav>
+        </aside>
+
+        <!-- Contenu principal du compte -->
+        <section class="account-content">
+            <!-- Section profil -->
+            <div class="profile-section" id="profile">
+                <h2>Mon Profil</h2>
+                <div class="profile-info">
+                    <div class="info-group">
+                        <label>Nom d'utilisateur</label>
+                        <p>JohnDoe123</p>
+                    </div>
+                    <div class="info-group">
+                        <label>Email</label>
+                        <p>john@example.com</p>
+                    </div>
+                    <div class="info-group">
+                        <label>Membre depuis</label>
+                        <p>Janvier 2025</p>
+                    </div>
+                </div>
+                <button class="btn">Modifier le profil</button>
+            </div>
+
+            <!-- Section Ma Liste -->
+            <div class="watchlist-section" id="watchlist">
+                <h2>Ma Liste</h2>
+                <div class="content-grid">
+                    <!-- Films et séries sauvegardés -->
+                    <div class="saved-item">
+                        <img src="/api/placeholder/200/113" alt="Contenu sauvegardé">
+                        <div class="item-info">
+                            <h4>Titre du film/série</h4>
+                            <p>Ajouté le 7 jan. 2025</p>
+                            <button class="btn-small">Regarder</button>
+                        </div>
+                    </div>
+                    <!-- Répéter pour plus d'éléments -->
+                </div>
+            </div>
+
+            <!-- Historique -->
+            <div class="history-section" id="history">
+                <h2>Historique de visionnage</h2>
+                <div class="history-list">
+                    <!-- Éléments de l'historique -->
+                    <div class="history-item">
+                        <img src="/api/placeholder/150/84" alt="Historique">
+                        <div class="item-info">
+                            <h4>Titre du contenu</h4>
+                            <p>Regardé le 7 jan. 2025</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Répéter pour plus d'éléments -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>...</footer>
+</body>
+</html>

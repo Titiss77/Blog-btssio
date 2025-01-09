@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéBlog - Catalogue de Films</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CinéBlog</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="films.html">Films</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Barre de recherche et filtres -->
+        <section class="filters-bar">
+            <div class="search-box">
+                <input type="search" placeholder="Rechercher un film...">
+            </div>
+            <div class="filter-options">
+                <select id="genre-filter" class="filter-select">
+                    <option value="">Tous les genres</option>
+                    <option value="Action">Action</option>
+                    <option value="Science-Fiction">Science-Fiction</option>
+                    <option value="Drame">Drame</option>
+                    <option value="Crime">Crime</option>
+                </select>
+                <select id="year-filter" class="filter-select">
+                    <option value="">Toutes les années</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Catalogue de films -->
+        <section class="movies-section">
+            <h2>Catalogue de Films</h2>
+            <div class="content-grid">
+                <!-- Les cartes de films seront injectées ici par JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CinéBlog - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
