@@ -31,6 +31,70 @@
             "image": "MovieImage/aff_3173020191031000001.jpg",
             "nouveau": false,
             "dateSortie": "1994"
+        },
+        {
+            "id": "3",
+            "titre": "M3GAN 2.0",
+            "annee": "2025",
+            "realisateur": "Gerard Johnstone",
+            "genre": [
+                "Horreur",
+                "Science-Fiction"
+            ],
+            "description": "La poupée androïde M3GAN revient avec de nouvelles aventures terrifiantes.",
+            "note": 4.2,
+            "videoUrl": "https://example.com/m3gan2-trailer",
+            "image": "MovieImage/m3gan2.jpg",
+            "nouveau": true,
+            "dateSortie": "2025"
+        },
+        {
+            "id": "4",
+            "titre": "Dune: Partie Deux",
+            "annee": "2024",
+            "realisateur": "Denis Villeneuve",
+            "genre": [
+                "Science-Fiction",
+                "Aventure"
+            ],
+            "description": "La suite épique de l'adaptation de Denis Villeneuve, explorant davantage l'univers de Dune.",
+            "note": 4.8,
+            "videoUrl": "https://example.com/dune2-trailer",
+            "image": "MovieImage/dune2.jpg",
+            "nouveau": true,
+            "dateSortie": "2024"
+        },
+        {
+            "id": "5",
+            "titre": "Nosferatu",
+            "annee": "2024",
+            "realisateur": "Robert Eggers",
+            "genre": [
+                "Horreur",
+                "Drame"
+            ],
+            "description": "Une réinterprétation moderne du classique de l'horreur sur le mythe du vampire.",
+            "note": 4.5,
+            "videoUrl": "https://example.com/nosferatu-trailer",
+            "image": "MovieImage/nosferatu.jpg",
+            "nouveau": true,
+            "dateSortie": "2024"
+        },
+        {
+            "id": "6",
+            "titre": "The Electric State",
+            "annee": "2024",
+            "realisateur": "The Russo Brothers",
+            "genre": [
+                "Science-Fiction",
+                "Aventure"
+            ],
+            "description": "Une adolescente et un robot traversent un monde post-apocalyptique.",
+            "note": 4.6,
+            "videoUrl": "https://example.com/electric-state-trailer",
+            "image": "MovieImage/electric_state.jpg",
+            "nouveau": true,
+            "dateSortie": "2024"
         }
     ]
 }
