@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéBlog - Séries</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CinéBlog</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Filtres spécifiques aux séries -->
+        <section class="filters-bar">
+            <div class="search-box">
+                <input type="text" placeholder="Rechercher une série...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="filters">
+                <select class="filter">
+                    <option>État</option>
+                    <option>En cours</option>
+                    <option>Terminée</option>
+                </select>
+                <!-- Autres filtres -->
+            </div>
+        </section>
+
+        <!-- Grille de séries avec saisons -->
+        <section class="series-grid">
+            <div class="series-card">
+                <img src="/api/placeholder/300/169" alt="Série">
+                <div class="series-info">
+                    <h3>Titre de la Série</h3>
+                    <div class="series-meta">
+                        <span>2024</span>
+                        <span>3 Saisons</span>
+                        <span>Drame</span>
+                    </div>
+                    <div class="seasons-preview">
+                        <h4>Saisons disponibles :</h4>
+                        <div class="season-buttons">
+                            <button>S1</button>
+                            <button>S2</button>
+                            <button>S3</button>
+                        </div>
+                    </div>
+                    <p>Synopsis de la série...</p>
+                    <div class="series-actions">
+                        <button class="btn">Regarder</button>
+                        <button class="btn-outline">+ Ma liste</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Répéter pour plus de séries -->
+        </section>
+    </main>
+
+    <footer>...</footer>
+</body>
+</html>

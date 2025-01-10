@@ -1,0 +1,215 @@
+/* Variables CSS */
+:root {
+    --primary-color: #8B5CF6;    /* Violet principal */
+    --primary-dark: #6D28D9;     /* Violet foncé */
+    --primary-light: #A78BFA;    /* Violet clair */
+    --dark-bg: #1E1B2C;          /* Fond sombre violacé */
+    --light-text: #E4E4E4;       /* Texte clair mais pas trop éclatant */
+    --gray-bg: #2D2A3B;          /* Fond gris sombre */
+    --transition: all 0.3s ease;
+    --radius: 12px;              /* Rayon commun pour bordures */
+    --shadow: 0 5px 15px rgba(139, 92, 246, 0.3); /* Ombre subtile */
+    --spacing: 1.5rem;           /* Espacement standard */
+}
+
+/* Reset global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-y: auto;
+    background: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header et Navigation */
+header {
+    background: rgba(30, 27, 44, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(139, 92, 246, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--primary-color);
+}
+
+/* Contenu principal */
+main {
+    margin-top: 80px; /* Pour ne pas cacher le contenu sous le header fixe */
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: 100vh;
+    flex: 1;
+}
+
+/* Contenu principal */
+.mon-compte-content {
+    flex: 3; /* Le contenu principal prend plus de place */
+}
+
+.mon-compte-sidebar {
+    flex: 1;
+    background-color: var(--gray-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 80px; /* Fixe la sidebar sous l'en-tête */
+}
+
+/* Widget Profil utilisateur */
+.profil-widget {
+    background-color: var(--dark-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.profil-widget h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.profil-widget .profil-info {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.profil-widget .profil-info span {
+    color: var(--light-text);
+}
+
+/* Formulaire de modification du profil */
+.profil-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--gray-bg);
+    overflow-y: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.profil-form input, .profil-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+    border: 1px solid #575454;
+    background-color: #333;
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.profil-form button {
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profil-form button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Historique des commandes */
+.commandes-widget {
+    background-color: var(--dark-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.commandes-widget h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.commandes-widget .commande-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: var(--radius);
+    background-color: var(--gray-bg);
+    box-shadow: var(--shadow);
+}
+
+.commandes-widget .commande-item p {
+    color: var(--light-text);
+}
+
+.commandes-widget .commande-item span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .mon-compte-sidebar {
+        display: none; /* Masquer la barre latérale sur petits écrans */
+    }
+
+    .profil-form button {
+        width: 100%;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav .nav-links a {
+        padding: 10px;
+    }
+}

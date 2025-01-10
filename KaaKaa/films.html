@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinéBlog - Films</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CinéBlog</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Barre de filtres spécifique aux films -->
+        <section class="filters-bar">
+            <div class="search-box">
+                <input type="text" placeholder="Rechercher un film...">
+                <button class="search-btn">🔍</button>
+            </div>
+            <div class="filters">
+                <select class="filter">
+                    <option>Genre</option>
+                    <option>Action</option>
+                    <option>Comédie</option>
+                    <!-- Plus d'options -->
+                </select>
+                <select class="filter">
+                    <option>Année</option>
+                    <!-- Options années -->
+                </select>
+                <select class="filter">
+                    <option>Note</option>
+                    <!-- Options notes -->
+                </select>
+            </div>
+        </section>
+
+        <!-- Grille de films -->
+        <section class="movies-grid">
+            <div class="movie-card">
+                <div class="movie-rating">8.5</div>
+                <img src="/api/placeholder/300/169" alt="Film">
+                <div class="movie-info">
+                    <h3>Titre du Film</h3>
+                    <div class="movie-meta">
+                        <span>2024</span>
+                        <span>2h 15min</span>
+                        <span>Action</span>
+                    </div>
+                    <p>Synopsis du film...</p>
+                    <div class="movie-actions">
+                        <button class="btn">Regarder</button>
+                        <button class="btn-outline">+ Ma liste</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Répéter pour plus de films -->
+        </section>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button>←</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>→</button>
+        </div>
+    </main>
+
+    <footer>...</footer>
+</body>
+</html>

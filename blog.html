@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CinéBlog - Blog</title>
-    <link href="style.css" rel="stylesheet">
+    <link href="Commentaires.css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- En-tête du site avec la barre de navigation -->
     <header>
         <nav>
             <a href="index.html" class="logo">CinéBlog</a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="films.html">Films</a></li>
-                <li><a href="series.html">Séries</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="compte.html">Mon Compte</a></li>
-                <li><a href="test.html">TEST - PLAYER</a></li>
             </ul>
         </nav>
     </header>
-
+    <!-- Contenu principal du blog -->
     <main class="blog-layout">
-        <!-- Catégories du blog -->
+        <section class="blog-content">  <!-- Ajouté un padding entre la navigation et les articles -->
+            <article class="blog-post">
+                <img src="MovieImage/R.jpg" style="width: 280px; height: auto;" alt="Image d'article">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span>7 janvier 2025</span>
+                        <span>Par John Doe</span>
+                        <span>Critiques</span>
+                    </div>
+                    <h2>Titre de l'article : C'est d'la merde</h2>
+                    <p class="post-excerpt">
+                        Cet article plonge dans l'univers d'un film ou d'une tendance cinématographique que nous avons décidément trouvé décevant. Que ce soit une critique acerbe d'un film qui aurait dû mieux faire ou une réflexion sur des choix douteux dans l'industrie, vous découvrirez pourquoi, parfois, la magie du cinéma ne fait que nous laisser sur notre faim. Préparez-vous à des arguments tranchants et des analyses sans compromis !
+                    </p>
+                    <a href="index.html" class="btn">Lire la suite</a>
+                </div>
+            </article>
+    
+            <!-- Formulaire de commentaire -->
+            <div class="comment-form">
+                <h3>Laissez un commentaire</h3>
+                <form id="commentForm">
+                    <textarea id="commentText" placeholder="Votre commentaire..." required></textarea>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+    
+            <!-- Section des commentaires -->
+            <div class="comments-section" id="commentsSection">
+                <h3>Commentaires</h3>
+                <!-- Les commentaires seront ajoutés ici -->
+            </div>
+        </section>
+    
+        <!-- Sidebar (barre latérale) avec catégories et articles populaires -->
         <aside class="blog-sidebar">
             <div class="categories-widget">
                 <h3>Catégories</h3>
@@ -33,29 +66,58 @@
                     <li><a href="#">Top 10</a></li>
                 </ul>
             </div>
+    
+            <div class="popular-posts-widget">
+                <h3>Articles populaires</h3>
+                <ul>
+                    <li><a href="#">Les meilleurs films de 2024</a></li>
+                    <li><a href="#">Entretien avec un réalisateur</a></li>
+                    <li><a href="#">Le cinéma en 2025: Tendances</a></li>
+                </ul>
+            </div>
         </aside>
-
-        <!-- Articles -->
-        <section class="blog-content">
-            <article class="blog-post">
-                <img src="/api/placeholder/800/400" alt="Article">
-                <div class="post-content">
-                    <div class="post-meta">
-                        <span>7 janvier 2025</span>
-                        <span>Par John Doe</span>
-                        <span>Critiques</span>
-                    </div>
-                    <h2>Titre de l'article</h2>
-                    <p class="post-excerpt">
-                        Aperçu détaillé de l'article avec plus de contenu...
-                    </p>
-                    <a href="#" class="btn">Lire la suite</a>
-                </div>
-            </article>
-            <!-- Plus d'articles -->
-        </section>
     </main>
+    
 
-    <footer>...</footer>
+    <!-- Footer avec informations de contact et autres liens -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CinéBlog - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <!-- Script pour la gestion des commentaires -->
+<script>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche le rechargement de la page
+
+        const commentText = document.getElementById('commentText').value;
+
+        // Vérification que le commentaire n'est pas vide
+        if (commentText.trim() !== "") {
+            // Création du nouvel élément de commentaire
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment'); // Application de la classe CSS
+
+            // HTML du commentaire à ajouter
+            newComment.innerHTML = `
+                <div class="comment-avatar">A</div>
+                <div class="comment-body">
+                    <p><strong>Utilisateur Anonyme:</strong> ${commentText}</p>
+                    <p class="comment-date">${new Date().toLocaleString()}</p>
+                </div>
+            `;
+            // Ajout du commentaire dans la section des commentaires
+            document.getElementById('commentsSection').appendChild(newComment);
+
+            // Réinitialisation du champ de texte
+            document.getElementById('commentText').value = "";
+        } else {
+            // Message si le champ est vide
+            alert("Veuillez entrer un commentaire.");
+        }
+    });
+</script>
 </body>
+
 </html>
