@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('id');
+    const starRating = document.getElementById('starRating');
+    let selectedRating = 0;
     let currentUser = {
         id: 'user123', // Simulé - devrait venir de l'authentification
         username: 'John Doe',
@@ -10,7 +12,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Structure de données pour les commentaires
     let comments = [];
+    let currentPage = 1;
+    const commentsPerPage = 5;
 
+
+    starRating.addEventListener('click', function(e) {
+        if (e.target.tagName === 'SPAN') {
+            selectedRating = parseInt(e.target.getAttribute('data-value'));
+            updateStarRating(selectedRating);
+        }
+    });
+
+    function updateStarRating(rating) {
+        const stars = starRating.querySelectorAll('span');
+        stars.forEach(star => {
+            const value = parseInt(star.getAttribute('data-value'));
+            star.classList.toggle('selected', value <= rating);
+        });
+    }
+
+    const commentForm = document.getElementById('commentForm');
+    commentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const commentContent = commentForm.querySelector('textarea').value;
+
+        // Ajoutez la logique pour sauvegarder le commentaire ici
+        console.log(`Commentaire ajouté: ${commentContent}, Note: ${selectedRating}`);
+        
+        // Réinitialisez le formulaire
+        commentForm.reset();
+        updateStarRating(0); // Réinitialise les étoiles
+    });
+    
     // Charger les détails du film
     async function loadMovieDetails() {
         try {
@@ -39,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         const videoPlayer = document.querySelector('#videoPlayer');
-        videoPlayer.setAttribute('poster', movie.image);
         videoPlayer.querySelector('source').src = movie.videoUrl;
         videoPlayer.load();
     }
@@ -71,7 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Afficher les commentaires
     function displayComments(comments) {
         const commentsContainer = document.querySelector('.comments-list');
-        commentsContainer.innerHTML = comments.map(comment => `
+        const start = (currentPage - 1) * commentsPerPage;
+        const end = start + commentsPerPage;
+        const paginatedComments = comments.slice(start, end);
+    
+        commentsContainer.innerHTML = paginatedComments.map(comment => `
             <div class="comment" data-comment-id="${comment.id}">
                 <div class="comment-header">
                     <div class="user-info">
@@ -90,6 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `).join('');
+    
+        displayPaginationControls();
     }
 
     // Gérer les likes
@@ -108,6 +146,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ici, vous feriez normalement une requête API pour persister le like
         }
     };
+
+    function displayPaginationControls() {
+        const paginationContainer = document.querySelector('.pagination');
+        const totalPages = Math.ceil(comments.length / commentsPerPage);
+        paginationContainer.innerHTML = Array.from({ length: totalPages }, (_, i) => `
+            <button class="page-button ${i + 1 === currentPage ? 'active' : ''}" onclick="changePage(${i + 1})">${i + 1}</button>
+        `).join('');
+    }
+    
+    function changePage(page) {
+        currentPage = page;
+        displayComments(comments);
+    }
 
     // Ajouter un nouveau commentaire
     async function addComment(event) {

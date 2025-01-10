@@ -20,9 +20,9 @@
     </header>
 
     <main class="movie-player-container">
-        <h1 class="movie-title"></h1>
-
-        <div class="movie-info"></div>
+        <div class="movie-info">
+            <h1 class="movie-title"></h1>
+        </div>
 
         <div class="video-container">
             <video id="videoPlayer" controls>
@@ -35,24 +35,25 @@
             <h2>Commentaires</h2>
             
             <form id="commentForm" class="comment-form">
-                <h3>Ajouter un commentaire</h3>
-                <div class="rating-input">
-                    <label for="rating">Note:</label>
-                    <select name="rating" id="rating" required>
-                        <option value="5">★★★★★</option>
-                        <option value="4">★★★★☆</option>
-                        <option value="3">★★★☆☆</option>
-                        <option value="2">★★☆☆☆</option>
-                        <option value="1">★☆☆☆☆</option>
-                    </select>
-                </div>
-                <textarea name="comment" placeholder="Partagez votre avis..." required></textarea>
-                <button type="submit" class="btn">Publier</button>
-            </form>
+    <h3>Ajouter un commentaire</h3>
+    <div class="rating-input">
+        <label for="rating">Note:</label>
+        <div id="starRating" class="star-rating">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+    </div>
+    <textarea name="comment" placeholder="Partagez votre avis..." required></textarea>
+    <button type="submit" class="btn">Publier</button>
+</form>
 
             <div class="comments-list">
                 <!-- Les commentaires seront injectés ici -->
             </div>
+            <div class="pagination"></div>
         </section>
     </main>
 
