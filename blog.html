@@ -24,6 +24,7 @@
     <main class="blog-layout">
         <section class="blog-content">  <!-- Ajouté un padding entre la navigation et les articles -->
             <article class="blog-post">
+                <h2>Le derniers articles</h2>
                 <img src="MovieImage/R.jpg" style="width: 280px; height: auto;" alt="Image d'article">
                 <div class="post-content">
                     <div class="post-meta">
@@ -70,9 +71,9 @@
             <div class="popular-posts-widget">
                 <h3>Articles populaires</h3>
                 <ul>
-                    <li><a href="#">Les meilleurs films de 2024</a></li>
-                    <li><a href="#">Entretien avec un réalisateur</a></li>
-                    <li><a href="#">Le cinéma en 2025: Tendances</a></li>
+                    <li><a href="meilleurs-films-2024.html">Les meilleurs films de 2024</a></li>
+                    <li><a href="entretien-realisateur.html">Entretien avec un réalisateur</a></li>
+                    <li><a href="cinema-2025-tendances.html">Le cinéma en 2025: Tendances</a></li>
                 </ul>
             </div>
         </aside>
@@ -113,7 +114,7 @@
             // Réinitialisation du champ de texte
             document.getElementById('commentText').value = "";
         } else {
-            // Message si le champ est vide
+            // Message si le champ est vide 
             alert("Veuillez entrer un commentaire.");
         }
     });
