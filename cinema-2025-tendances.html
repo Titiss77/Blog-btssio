@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le cinéma en 2025: Tendances - CinéBlog</title>
+    <link href="Commentaires.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">CinéBlog</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="compte.html">Mon Compte</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="blog-layout">
+        <section class="blog-content">
+            <article class="blog-post">
+                <img src="MovieImage/cinema-2025.jpg" style="width: 280px; height: auto;" alt="Le cinéma en 2025: Tendances">
+                <div class="post-content">
+                    <div class="post-meta">
+                        <span>15 janvier 2025</span>
+                        <span>Par John Doe</span>
+                        <span>Actualités</span>
+                    </div>
+                    <h2>Le cinéma en 2025: Tendances</h2>
+                    <p class="post-excerpt">
+                        Alors que 2025 approche à grands pas, l'industrie cinématographique se prépare à des changements majeurs. Des avancées technologiques aux nouvelles façons de consommer les films, cette année pourrait bien redéfinir le paysage du cinéma. Voici les principales tendances à suivre.
+                    </p>
+                    <a href="index.html" class="btn">Lire la suite</a>
+                </div>
+            </article>
+
+            <div class="comment-form">
+                <h3>Laissez un commentaire</h3>
+                <form id="commentForm">
+                    <textarea id="commentText" placeholder="Votre commentaire..." required></textarea>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+
+            <div class="comments-section" id="commentsSection">
+                <h3>Commentaires</h3>
+            </div>
+        </section>
+
+        <aside class="blog-sidebar">
+            <div class="categories-widget">
+                <h3>Catégories</h3>
+                <ul>
+                    <li><a href="#">Critiques</a></li>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="#">Interviews</a></li>
+                    <li><a href="#">Top 10</a></li>
+                </ul>
+            </div>
+
+            <div class="popular-posts-widget">
+                <h3>Articles populaires</h3>
+                <ul>
+                    <li><a href="meilleurs-films-2024.html">Les meilleurs films de 2024</a></li>
+                    <li><a href="entretien-realisateur.html">Entretien avec un réalisateur</a></li>
+                    <li><a href="cinema-2025-tendances.html">Le cinéma en 2025: Tendances</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CinéBlog - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const commentText = document.getElementById('commentText').value;
+            if (commentText.trim() !== "") {
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `
+                    <div class="comment-avatar">A</div>
+                    <div class="comment-body">
+                        <p><strong>Utilisateur Anonyme:</strong> ${commentText}</p>
+                        <p class="comment-date">${new Date().toLocaleString()}</p>
+                    </div>
+                `;
+                document.getElementById('commentsSection').appendChild(newComment);
+                document.getElementById('commentText').value = "";
+            } else {
+                alert("Veuillez entrer un commentaire.");
+            }
+        });
+    </script>
+</body>
+</html>
